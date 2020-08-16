@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+:root {
+  --primary-color: #4e8eb8;
+  --border-radius: 5px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23f8f3ff' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+  font-family: 'Karla', sans-serif;
+}
+
+h1 {
+  color: white;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 275px;
+  margin: 20px auto 10px;
+  user-select: none;
+  text-align: center;
+}
+
+h1:hover{
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Bookmarks */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 10px;
+}
+
+.item:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+a {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.fa-times {
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+
+}
+.name img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: sub;
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+
+@media screen and (max-width: 600px){
+  .container {
+    flex-direction: column;
+  }
+}
+
