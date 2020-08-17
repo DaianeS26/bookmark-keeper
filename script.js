@@ -27,7 +27,31 @@ function validateForm(nameValue, urlValue){
         return false;
     }
     return true;
+}
 
+//Build Bookmark DOM
+function buildBookmarks(){
+    bookmarks.forEach((bookmark) => {
+        const {name, url } = bookmark;
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item');
+        const closeIcon = document.createElement('i');
+        closeIcon.classList.add('fas', 'fa-times');
+        closeIcon.setAttribute('title', 'Delete Bookmark');
+        closeIcon.setAttribute('onclick', `deleteBookmark('${url}')`);
+        const linkInfo = document.createElement('div');
+        linkInfo.classList.add('name');
+        const favicon = document.createElement('img');
+        favicon.setAttribute('src', `https://s2.googleusercontent.com/s2/favicons?domain=${url}`);
+        favicon.setAttribute('alt', 'Favicon');
+        const link = document.createElement('a');
+        link.setAttribute('href', `${url}`);
+        link.setAttribute('target', '_blank');
+        link.textContent = name;
+        linkInfo.append(favicon, link);
+        itemDiv.append(closeIcon, linkInfo);
+        bookmarksContainer.append(itemDiv);
+    });
 }
 
 //Fetch bookmarks from local storage
@@ -43,7 +67,7 @@ function fetchBookmarks(){
         ];
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }
-    console.log(bookmarks);
+    buildBookmarks();
 }
 
 // Handle Data from form
